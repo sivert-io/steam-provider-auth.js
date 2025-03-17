@@ -2,7 +2,7 @@
 
 This guide walks you through **adding Steam authentication** to **Auth.js (NextAuth.js v5)**. Since Auth.js now runs **on the edge**, we need a browser-compatible approach, avoiding Node.js-specific packages like `crypto`.  
 
-Heavily inspired by [next-auth-steam](https://github.com/Nekonyx/next-auth-steam) (Steam authentication provider for NextAuth.js)
+Heavily inspired by [next-auth-steam](https://github.com/Nekonyx/next-auth-steam) (Steam authentication provider for NextAuth.js v4)
 
 ## 📂 Folder Structure  
 
