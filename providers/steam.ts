@@ -1,6 +1,4 @@
-import { NextApiRequest } from "next";
 import { OAuthConfig, OAuthUserConfig } from "next-auth/providers";
-import { NextRequest } from "next/server";
 import { RelyingParty } from "openid";
 
 export enum CommunityVisibilityState {
@@ -46,7 +44,7 @@ export const PROVIDER_ID = "steam";
 export const AUTHORIZATION_URL = "https://steamcommunity.com/openid/login";
 
 export function SteamProvider(
-  req: Request | NextRequest | NextApiRequest,
+  req: Request,
   options: SteamProviderOptions
 ): OAuthConfig<SteamProfile> {
   if (!options.clientSecret) {
@@ -131,7 +129,7 @@ export function SteamProvider(
 }
 
 async function verifyAssertion(
-  req: Request | NextRequest | NextApiRequest,
+  req: Request,
   realm: string,
   returnTo: string
 ): Promise<string | null> {
