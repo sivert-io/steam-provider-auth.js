@@ -32,27 +32,27 @@ Since this is just a **tutorial**, there is no `package.json` provided—you'll 
 
 ## 🛠️ Setup  
 
-1️⃣ **Set Up Environment Variables**  
+1. **Set Up Environment Variables**  
    - Create a `.env` file and add:  
 
-   ```
+```
 NEXTAUTH_URL=https://mywebsite.com
 NEXTAUTH_STEAM_SECRET=<your-steam-api-key>
-   ```
+```
 
-2️⃣ **Create the Steam Provider**  
+2. **Create the Steam Provider**  
    - Add a file called `steam.ts` inside the `providers/` directory.  
    - This file will handle the Steam OpenID authentication flow.  
 
-3️⃣ **Update Your Auth Configuration**  
+3. **Update Your Auth Configuration**  
    - Modify your `auth.ts` file to use the Steam provider.  
    - Ensure `callbackUrl` matches the verification route in the next step.  
 
-4️⃣ **Create a Dummy Token Route**  
+4. **Create a Dummy Token Route**  
    - Steam’s OpenID system does **not** provide an OAuth token.  
    - To work around this, create a verification route at `app/api/auth/verify/route.ts`.  
 
-5️⃣ **Define TypeScript Types**  
+5. **Define TypeScript Types**  
    - To ensure type safety, add `types/auth.d.ts`.  
    - This extends Auth.js types with Steam profile data.  
 
