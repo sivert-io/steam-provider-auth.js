@@ -1,6 +1,4 @@
-import { NextRequest } from "next/server";
-
-export async function GET(req: NextRequest): Promise<Response> {
+export async function GET(req: Request): Promise<Response> {
   const { searchParams } = new URL(req.url);
   searchParams.set("code", "123");
   return Response.redirect(
@@ -10,6 +8,6 @@ export async function GET(req: NextRequest): Promise<Response> {
   );
 }
 
-export async function POST(req: NextRequest): Promise<Response> {
+export async function POST(req: Request): Promise<Response> {
   return Response.json({ token: "123" });
 }
